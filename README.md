@@ -10,7 +10,7 @@ This document provides a guide for creating and using a Python 3.9 virtual envir
 3. [Create and Activate the Anaconda Environment](#create-and-activate-the-anaconda-environment)
 4. [Install Coral Dependencies](#install-coral-dependencies)
 5. [Clone the PyCoral Repository and Install Additional Requirements](#clone-the-pycoral-repository-and-install-additional-requirements)
-6. [Run a Sample Classification](#run-a-sample-classification)
+6. [Run a Sample Classification Script](#run-a-sample-classification)
 
 ---
 
@@ -84,15 +84,12 @@ bash examples/install_requirements.sh classify_image.py
 ---
 
 <a id="run-a-sample-classification"></a>
-## 6. Run a Sample Classification
+## 6. Run a Sample Classification Script
 
 To verify the setup, run the sample classification script:
 
 ```bash
-python examples/classify_image.py \
-  --model test_data/mobilenet_v2_1.0_224_inat_bird_quant_edgetpu.tflite \
-  --labels test_data/inat_bird_labels.txt \
-  --input test_data/parrot.jpg
+python examples/classify_image.py --model test_data/mobilenet_v2_1.0_224_inat_bird_quant_edgetpu.tflite --labels test_data/inat_bird_labels.txt --input test_data/parrot.jpg
 ```
 
 If everything is configured correctly, you should see an output describing the bird species inferred from the provided image.
