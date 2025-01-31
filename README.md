@@ -11,6 +11,7 @@ This document provides a guide for creating and using a Python 3.9 virtual envir
 4. [Install Coral Dependencies](#install-coral-dependencies)
 5. [Clone the PyCoral Repository and Install Additional Requirements](#clone-the-pycoral-repository-and-install-additional-requirements)
 6. [Run a Sample Classification Script](#run-a-sample-classification)
+7. [Important Note](#important-note)
 
 ---
 
@@ -93,4 +94,30 @@ python examples/classify_image.py --model test_data/mobilenet_v2_1.0_224_inat_bi
 ```
 
 If everything is configured correctly, you should see an output describing the bird species inferred from the provided image.
+
+---
+
+<a id="important-note"></a>
+## 7. Important Note
+
+**Important**: Some versions of the `install_requirements.sh` script reference an outdated link for the test data on line 20, specifically:
+
+```bash
+readonly TEST_DATA_URL="https://github.com/google-coral/test_data/raw/master/"
+```
+If you encounter download errors (i.e. Not Found), replace this line with the following:
+
+```bash
+readonly TEST_DATA_URL="https://raw.githubusercontent.com/google-coral/test_data/master/"
+```
+After making this adjustment, run:
+
+```bash
+bash examples/install_requirements.sh
+```
+in the `pycoral` directory again to download the test data correctly.
+
+
+
+
 
